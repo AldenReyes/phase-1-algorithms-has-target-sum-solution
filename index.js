@@ -1,9 +1,19 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
-}
+  const numbers_seen = new Set();
 
+  for (const num of array) {
+    const number_to_find = target - num;
+    if (numbers_seen.has(number_to_find)) {
+      return true;
+    }
+    numbers_seen.add(num);
+  }
+
+  return false;
+}
 /* 
   Write the Big O time complexity of your function here
+  O(n)
 */
 
 /* 
